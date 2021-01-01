@@ -1,28 +1,116 @@
 <html>
     <head>
         <title>TicTacToe | DevPlusZw</title>
+        <meta name="description" value="TicTacToe Game by DevPlusZw | &copy DevPlusZw . a ticttacttoe developed with python, python tictactoew, ticttactoe, python, flask">
+        <meta name="title" value="TicTacToe | DevPlusZw">
+        <meta name="Author" value="DevPlusZw">
+
         <style>
-            table, th, td {
-              border: 1px solid black;
-              border-collapse: collapse;
+            table{
+                border-collapse: collapse;
+                margin: 0px;
+                padding: 0px;
+                border: 2px solid rgb(107, 102, 111);
+                border-style: groove;
+                align-content: center;
+            }
+            th{
+                border: 2px solid rgb(107, 102, 111);
+                border-style: groove;
+
+            }
+            td{
+                border: 2px solid rgb(107, 102, 111);
+                border-style: groove;
+                width: 100px;
+                height: 100px;
+            }
+
+            button{
+                height: 100;
+                padding: 0px;
+                width: 100;
+                margin: 0px;
+                
+            }
+            .bottom-nav{
+                /* position: static; */
+                vertical-align: bottom;
+                font-style: bold;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                background-color: transparent;
+                font-weight: 100;
+                color: rgb(19, 22, 22);
+            }
+            html{
+                background-repeat: repeat-x;
+                background-color: rgb(139, 199, 197);
+                opacity: 95%;
+                padding: 0px;
+                margin: 0%;
+            }
+            hr{
+                margin: 0%;
+                padding: 0%;
+                color: black;
+                height: 1px;
+            }
+            .title{
+                font-family: monospace;
+                stroke-width: 1px;
+                stroke: white;
+            }
+            .left{
+                align-self: left;
+                float: left;
+                margin-top: 50px;
+            }
+            /* .right{
+                float: right;
+            } */
+
+            ol{
+                border: 1px solid rgb(244, 242, 242);
+                padding: 0%;
+                background-color: rgb(90, 201, 201);
+                margin: 5px;
+            }
+            li{
+                list-style: '>';
+                float: inline-end;
+                padding: 0%;
+                border: 1px solid black;
+            }
+            .top-bar{
+                opacity: 90%;
+                margin: 0%;
+            }
+            t{
+                font-size: x-large;
+            }
+            .m{
+                margin-right: 100px;
+                margin: 30px;
             }
             </style>
     </head>
     <body>
-        <h1><centre><u>TicTacToe by DevPlusZw</u></centre></h1>
-        <br><br>
+        <!-- header for DevPlUSZW Game title -->
+        <div class="top-bar"><hr>
+        <h1 class="title"><center>TicTacToe by DevPlusZw</center></h1>
+        <br></div>
         <hr>
-        <h4>num -> {{num}}</h4>
-        <hr>
-
-        <hr>
-        <h1>{{player}}</h1><br>
-        <h1>{{board}}</h1>
-        <centre>
-        <form action="" method="post">
-        <table width="50%">
+        <!-- <h1>{{board}}</h1> //game nolonger visible -->
+        <center>
+        <form action="" method="post"><div class="container">
+        <div class="left"><ol>
+            <li>Player 1 --> [X]</li><br>
+            <li>Player 2 --> [0]</li>
+        </ol><br><br><hr>
+        <h4 class="m">>>>I'ts <t>{{player}}</t>'s turn<<<</h4><hr>
+        </div><table>
              <tr>
-                <td>{% if board[0] != " " %}
+                <td input type="submit"><center>{% if board[0] != " " %}
                         <h1>{{board[0]}}</h1>
                     {% endif %}
                     {% if board[0] == " "%}
@@ -30,16 +118,16 @@
                             1
                           </button></h1>
                     {% endif %}
-                </td> 
-                <td>{% if board[1] != " " %}
+                </center></td> 
+                <td><center>{% if board[1] != " " %}
                     <h1>{{board[1]}}</h1>
                 {% endif %}
                 {% if board[1] == " "%}
                     <h1><button type="submit" name="pos" value="1">
                         2
                       </button></h1>
-                {% endif %}</td> 
-                    <td> 
+                {% endif %}</center></td> 
+                    <td><center>
                         {% if board[2] != " " %}
                         <h1>{{board[2]}}</h1>
                     {% endif %}
@@ -48,74 +136,88 @@
                             3
                           </button></h1>
                     {% endif %}
-                    </td>
+                    </center></td>
              </tr>
              <tr>
-                <td>{% if board[3] != " " %}
+                <td><center>{% if board[3] != " " %}
                     <h1>{{board[3]}}</h1>
                 {% endif %}
                 {% if board[3] == " "%}
                     <h1><button type="submit" name="pos" value="3">
                         4
                       </button></h1>
-                {% endif %}</td> 
-                <td>{% if board[4] != " " %}
+                {% endif %}</center></td> 
+                <td><center>{% if board[4] != " " %}
                     <h1>{{board[04]}}</h1>
                 {% endif %}
                 {% if board[4] == " "%}
                     <h1><button type="submit" name="pos" value="4">
                         5
                       </button></h1>
-                {% endif %}</td> 
-                <td>{% if board[5] != " " %}
+                {% endif %}</center></td> 
+                <td><center>{% if board[5] != " " %}
                     <h1>{{board[5]}}</h1>
                 {% endif %}
                 {% if board[5] == " "%}
                     <h1><button type="submit" name="pos" value="5">
                         6
                       </button></h1>
-                {% endif %}</td>
+                {% endif %}</center></td>
              </tr>
              <tr>
-                <td>{% if board[6] != " " %}
+                <td><center>{% if board[6] != " " %}
                     <h1>{{board[6]}}</h1>
                 {% endif %}
                 {% if board[6] == " "%}
                     <h1><button type="submit" name="pos" value="6">
                         7
                       </button></h1>
-                {% endif %}</td> 
-                <td>{% if board[7] != " " %}
+                {% endif %}</center></td> 
+                <td><center>{% if board[7] != " " %}
                     <h1>{{board[7]}}</h1>
                 {% endif %}
                 {% if board[7] == " "%}
                     <h1><button type="submit" name="pos" value="7">
                         8
                       </button></h1>
-                {% endif %}</td> 
-                <td>{% if board[8] != " " %}
+                {% endif %}</center></td> 
+                <td><center>{% if board[8] != " " %}
                     <h1>{{board[8]}}</h1>
                 {% endif %}
                 {% if board[8] == " "%}
                     <h1><button type="submit" name="pos" value="8">
                          9
                        </button></h1>
-                {% endif %}</td>
+                {% endif %}</center></td>
              </tr>
         </table>
+        </div>
+        {% if over == 'over' %}
+        <script>
+            v = setTimeout(aler, 100)
+
+            function aler(){
+                window.alert('{{error}}', run())
+            }
+           
+
+            function run(){
+                window.location.href='/'
+
+            }
+        </script>
+        {% endif %}
             <input type="text" name="post" text="0" hidden>
             <input type="text"name="player" text="X" hidden>
         </form>
-        </centre>
+        </center>
         <!-- to show error if error is not '' empty -->
-        {% if error != '' %}
-        <div><hr><b><u><h1>Infor - {{error}}</h1></b><hr></div>
+        {% if error != '' and over != 'over'%}
+        <div class='error'><hr><h3>{{error}}</h3></div>
         {% endif %}
         </centre>
         <br>
-        <p>Deployment Test - 1</p>
-        <br>
         <hr>
-        <div class="bottomnav"><h2> &copy DevPlusZw 2022</h2></div>
+        <center><div class="bottom-nav"><h2> &copy DevPlusZw 2022</h2></div></center>
     </body>
 </html>
