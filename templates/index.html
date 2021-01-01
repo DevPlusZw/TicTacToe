@@ -8,7 +8,7 @@
         <style>
             table{
                 border-collapse: collapse;
-                margin: 0px;
+                margin: 30px;
                 padding: 0px;
                 border: 2px solid rgb(107, 102, 111);
                 border-style: groove;
@@ -30,14 +30,15 @@
                 height: 100;
                 padding: 0px;
                 width: 100;
+                background-color: azure;
                 margin: 0px;
                 
             }
             .bottom-nav{
-                /* position: static; */
-                vertical-align: bottom;
+                position: static;
                 font-style: bold;
-                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                align-content: center;
+                font-family: 'sans-serif;';
                 background-color: transparent;
                 font-weight: 100;
                 color: rgb(19, 22, 22);
@@ -53,10 +54,11 @@
                 margin: 0%;
                 padding: 0%;
                 color: black;
-                height: 1px;
+                height: 0.5px;
+                border-style: ridge;
             }
             .title{
-                font-family: monospace;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
                 stroke-width: 1px;
                 stroke: white;
             }
@@ -64,6 +66,10 @@
                 align-self: left;
                 float: left;
                 margin-top: 50px;
+                border-style: ridge; 
+                padding: 0px;
+                align-items: center;
+                align-content: center;
             }
             /* .right{
                 float: right;
@@ -73,24 +79,24 @@
                 border: 1px solid rgb(244, 242, 242);
                 padding: 0%;
                 background-color: rgb(90, 201, 201);
-                margin: 5px;
             }
             li{
-                list-style: '>';
+                list-style: '';
                 float: inline-end;
                 padding: 0%;
                 border: 1px solid black;
             }
             .top-bar{
-                opacity: 90%;
+                opacity: 80%;
                 margin: 0%;
             }
             t{
-                font-size: x-large;
+                font-size: 50px;
+                font-style: solid white;
             }
             .m{
-                margin-right: 100px;
-                margin: 30px;
+                align-self: center;
+    
             }
             </style>
     </head>
@@ -103,12 +109,12 @@
         <!-- <h1>{{board}}</h1> //game nolonger visible -->
         <center>
         <form action="" method="post"><div class="container">
-        <div class="left"><ol>
+        <div class="left"><center><ol>
             <li>Player 1 --> [X]</li><br>
             <li>Player 2 --> [0]</li>
-        </ol><br><br><hr>
-        <h4 class="m">>>>I'ts <t>{{player}}</t>'s turn<<<</h4><hr>
-        </div><table>
+        </ol><br><br>
+        </center>
+        </div><br><center><h4 class="m"><font color="blue">>>I'ts </font><t>{{player}}</t><font color="blue">'s turn<<</font></h4></center><table>
              <tr>
                 <td input type="submit"><center>{% if board[0] != " " %}
                         <h1>{{board[0]}}</h1>
@@ -148,7 +154,7 @@
                       </button></h1>
                 {% endif %}</center></td> 
                 <td><center>{% if board[4] != " " %}
-                    <h1>{{board[04]}}</h1>
+                    <h1>{{board[4]}}</h1>
                 {% endif %}
                 {% if board[4] == " "%}
                     <h1><button type="submit" name="pos" value="4">
@@ -217,7 +223,9 @@
         {% endif %}
         </centre>
         <br>
+        <br>
+        <br>
         <hr>
-        <center><div class="bottom-nav"><h2> &copy DevPlusZw 2022</h2></div></center>
+        <div class="bottom-nav"><center><h2> &copy DevPlusZw 2022</h2></center></div>
     </body>
 </html>
