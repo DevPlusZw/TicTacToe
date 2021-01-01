@@ -13,18 +13,7 @@ pos = 0
 def starter():
     # having fun with request headers
     toV2 = request.headers
-    print(tictac.passw)
-    allowed = ['gameover', 'gamon']
-    if "Sec-Ch-Ua-Platform" in toV2:
-        SvG9 = toV2["Sec-Ch-Ua-Platform"]
-        btv1 = SvG9.replace('"', '')
-        print(btv1)
-        if btv1 != "macOS":
-            return "invalid btv1"
-    print(toV2)
-    if request.endpoint not in allowed:
-        return "<h1>Not allowed to view this page</h1>"
-    print("before")
+    print(request.headers)
    
     
 
