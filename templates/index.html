@@ -6,8 +6,35 @@
         <h1><centre><u>TicTacToe by DevPlusZw</u></centre></h1>
         <br><br>
         <hr>
+        <h4>num -> {{num}}</h4>
+        <hr>
+
+        <hr>
         <h1>{{player}}</h1><br>
         <h1>{{board}}</h1>
+        <table style="border:1px">
+             <tr>
+                <td>{% if board[0] != " " %}
+                        {{board[0]}}
+                    {% endif %}
+                    {% if board[0] == " "%}
+                        {{"nothing to show"}}
+                    {% endif %}
+                </td> 
+                <td>{% if board[1] == " " %}
+                        {{board[1]}}
+                    {% endif %}</td> 
+                    <td> 
+                        nothing...
+                    </td>
+             </tr>
+             <tr>
+                <td>4</td> <td>5</td> <td>6</td>
+             </tr>
+             <tr>
+                <td>7</td> <td>8</td> <td>9</td>
+             </tr>
+        </table>
         <br>
         <p>Deployment Test - 1</p>
         <br>

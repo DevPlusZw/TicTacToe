@@ -4,22 +4,30 @@ app = Flask(__name__)
 app.secret_key = b'_5#Gc2L"F4Q8z\n\Mec]/'
 
 tictac = game()
-board = tictac.start()
+pos = 0
 @app.errorhandler(404)
 def page_not_found(e):
     return "<center><h4>Page Youre looking for doesnt exist - DevPlusZw <a href='/'>go back</></h4></center>"
 @app.route('/', methods=['GET', 'POST'])
 def index():
     player = tictac.check_win()
+    data = tictac.start()
+    board = data['1']
+    num = data['2']
     if request.method == 'POST':
         player = request.form['player']
-        pos = request.form['pos']
-        return render_template('index.html', board=board, player=player)
-    return render_template('index.html', board=board, player=player)
+        if request.form['pos'] == "":
+            pos = 0
+            print('error on pos')
+        else:  
+            pos = int(request.form['pos'])
+        board[pos] = "X"
+        return render_template('index.html', board=board, player=player, num=num)
+    return render_template('index.html', board=board, player=player, num=num)
 @app.route('/gameover')
 def gameover():
     return "game over" 
 # game funtion
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
