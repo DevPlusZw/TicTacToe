@@ -6,3 +6,7 @@ def method_name():
     return "TicTacToe Game By devplus"
     # to add template rendering for initial game
     # 
+
+if __name__ == "__main__":
+    app.run()
+    
