@@ -1,7 +1,7 @@
-from Flask import Flask
+from flask import Flask 
 app = Flask(__name__)
 
-@app.@app.route('/')
+@app.route('/') #corrected double route error
 def method_name():
     return "TicTacToe Game By devplus"
     # to add template rendering for initial game
@@ -9,4 +9,3 @@ def method_name():
 
 if __name__ == "__main__":
     app.run()
-    
