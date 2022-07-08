@@ -12,10 +12,9 @@ def page_not_found(e):
 def index():
     player = tictac.check_win()
     if request.method == 'POST':
-        data = request.form['data']
         player = request.form['player']
         pos = request.form['pos']
-        return redirect(url_for('index.html'))
+        return redirect(url_for('index.html', board=player, player=pos))
     return render_template('index.html', board=board, player=player)
 @app.route('/gameover')
 def gameover():
