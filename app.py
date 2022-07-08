@@ -1,14 +1,26 @@
-from flask import Flask 
+from games import game
+from flask import Flask, session, request, redirect, url_for, render_template
 app = Flask(__name__)
+app.secret_key = b'_5#Gc2L"F4Q8z\n\Mec]/'
 
-@app.route('/') #corrected double route error
-def method_name():
-    return "<h1>TicTacToe Game By devplus</h1>"
-    # to add template rendering for initial game
-    # 
+tictac = game()
+board = tictac.start()
 @app.errorhandler(404)
 def page_not_found(e):
-    return "<center><h1>Hakuna Page Rakadaro</h1></center>"
+    return "<center><h4>Page Youre looking for doesnt exist - DevPlusZw <a href='/'>go back</></h4></center>"
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    player = tictac.check_win()
+    if request.method == 'POST':
+        data = request.form['data']
+        player = request.form['player']
+        pos = request.form['pos']
+        return redirect(url_for('index.html'))
+    return render_template('index.html', board=board, player=player)
+@app.route('/gameover')
+def gameover():
+    return "game over" 
+# game funtion
 
 if __name__ == "__main__":
     app.run()
