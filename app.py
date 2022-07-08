@@ -14,7 +14,7 @@ def index():
     if request.method == 'POST':
         player = request.form['player']
         pos = request.form['pos']
-        return redirect(url_for('index.html', board=player, player=pos))
+        return redirect(url_for('index', board=player, player=pos))
     return render_template('index.html', board=board, player=player)
 @app.route('/gameover')
 def gameover():
