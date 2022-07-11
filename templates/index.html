@@ -31,7 +31,7 @@
                 <td>{% if board[1] != " " %}
                     <h1>{{board[1]}}</h1>
                 {% endif %}
-                {% if board[0] == " "%}
+                {% if board[1] == " "%}
                     <h1>2</h1>
                 {% endif %}</td> 
                     <td> 
@@ -84,6 +84,10 @@
                 {% endif %}</td>
              </tr>
         </table>
+        <!-- to show error if error is not '' empty -->
+        {% if error != '' %}
+        <div><hr><b><u>ERROR - {{error}}</b>u><b></b><hr></div>
+        {% endif %}
         </centre>
         <br>
         <p>Deployment Test - 1</p>
