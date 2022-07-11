@@ -4,7 +4,6 @@ app = Flask(__name__)
 app.secret_key = b'_5#Gc2L"F4Q8z\n\Mec]/'
 
 mysession = 'mysession'
-
 error = '' #set to pass errors to UI
 tictac = game()
 pos = 0
