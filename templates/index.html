@@ -19,27 +19,34 @@
         <h1>{{player}}</h1><br>
         <h1>{{board}}</h1>
         <centre>
+        <form action="" method="post">
         <table width="50%">
              <tr>
                 <td>{% if board[0] != " " %}
                         <h1>{{board[0]}}</h1>
                     {% endif %}
                     {% if board[0] == " "%}
-                        <h1>1</h1>
+                        <h1><button type="submit" name="pos" value="0">
+                            1
+                          </button></h1>
                     {% endif %}
                 </td> 
                 <td>{% if board[1] != " " %}
                     <h1>{{board[1]}}</h1>
                 {% endif %}
                 {% if board[1] == " "%}
-                    <h1>2</h1>
+                    <h1><button type="submit" name="pos" value="1">
+                        2
+                      </button></h1>
                 {% endif %}</td> 
                     <td> 
                         {% if board[2] != " " %}
                         <h1>{{board[2]}}</h1>
                     {% endif %}
                     {% if board[2] == " "%}
-                        <h1>3</h1>
+                        <h1><button type="submit" name="pos" value="2">
+                            3
+                          </button></h1>
                     {% endif %}
                     </td>
              </tr>
@@ -48,19 +55,25 @@
                     <h1>{{board[3]}}</h1>
                 {% endif %}
                 {% if board[3] == " "%}
-                    <h1>4</h1>
+                    <h1><button type="submit" name="pos" value="3">
+                        4
+                      </button></h1>
                 {% endif %}</td> 
                 <td>{% if board[4] != " " %}
                     <h1>{{board[04]}}</h1>
                 {% endif %}
                 {% if board[4] == " "%}
-                    <h1>5</h1>
+                    <h1><button type="submit" name="pos" value="4">
+                        5
+                      </button></h1>
                 {% endif %}</td> 
                 <td>{% if board[5] != " " %}
                     <h1>{{board[5]}}</h1>
                 {% endif %}
                 {% if board[5] == " "%}
-                    <h1>6</h1>
+                    <h1><button type="submit" name="pos" value="5">
+                        6
+                      </button></h1>
                 {% endif %}</td>
              </tr>
              <tr>
@@ -68,36 +81,42 @@
                     <h1>{{board[6]}}</h1>
                 {% endif %}
                 {% if board[6] == " "%}
-                    <h1>7</h1>
+                    <h1><button type="submit" name="pos" value="6">
+                        7
+                      </button></h1>
                 {% endif %}</td> 
                 <td>{% if board[7] != " " %}
                     <h1>{{board[7]}}</h1>
                 {% endif %}
                 {% if board[7] == " "%}
-                    <h1>8</h1>
+                    <h1><button type="submit" name="pos" value="7">
+                        8
+                      </button></h1>
                 {% endif %}</td> 
                 <td>{% if board[8] != " " %}
                     <h1>{{board[8]}}</h1>
                 {% endif %}
                 {% if board[8] == " "%}
-                    <h1>9</h1>
+                    <h1><button type="submit" name="pos" value="8">
+                         9
+                       </button></h1>
                 {% endif %}</td>
              </tr>
         </table>
+            <input type="text" name="post" text="0" hidden>
+            <input type="text"name="player" text="X" hidden>
+            <input type="submit" name="submit" value="Submit">
+        </form>
+        </centre>
         <!-- to show error if error is not '' empty -->
         {% if error != '' %}
-        <div><hr><b><u>ERROR - {{error}}</b>u><b></b><hr></div>
+        <div><hr><b><u><h1>Infor - {{error}}</h1></b><hr></div>
         {% endif %}
         </centre>
         <br>
         <p>Deployment Test - 1</p>
         <br>
         <hr>
-        <form action="" method="post">
-            <input type="text" name="pos" text="0" >
-            <input type="text"name="player" text="X" >
-            <input type="submit" name="submit" value="Submit">
-        </form>
         <div class="bottomnav"><h2> &copy DevPlusZw 2022</h2></div>
     </body>
 </html>

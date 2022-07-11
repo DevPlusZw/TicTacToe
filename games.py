@@ -4,10 +4,10 @@ class game:
 
         self.player1 = "X"
         self.player2 = "0"
-        self.turn = player1 
+        self.turn = self.player1 
         self.winner = None
         self.count = 0
-        self.game_over = False
+        self.gameon = True
     def start(self):
         
         y = self.count
@@ -17,28 +17,41 @@ class game:
 
     def move_valid(self, pos):
         if pos >= 0 and pos <= 8 and self.board[pos] == " ":
-            return 'valid'
+            return True
         else:
-            return 'not valid'
+            return False
         #check if move valid
 
+    def get_player(self):
+        return self.turn
     def check_win(self):
-        if board[0] == board[1] == board == board[2] == self.player1: #horizontal 1 check
-               return win
-        if board[0] == board[1] == board == board[2] == self.player2: #horizontal 1 check
-               return win
-        if board[3] == board[4] == board == board[5] == self.player1: #horizontal 1 check
-               return win
-        if board[3] == board[4] == board == board[5] == self.player2: #horizontal 1 check
-               return win
-        if board[6] == board[7] == board == board[8] == self.player1: #horizontal 1 check
-               return win
-        if board[6] == board[7] == board == board[8] == self.player2: #horizontal 1 check
-               return win
-        #check if game is over and someone won
+        if self.board[0] == self.board[1] == self.board == self.board[2] == "X": #horizontal 1 check
+               self.gameon = False
+               return "win"
+        if self.board[0] == self.board[1] == self.board == self.board[2] == "0": #horizontal 1 check
+               self.gameon = False
+               return "win"
+        if self.board[3] == self.board[4] == self.board == self.board[5] == "X": #horizontal 1 check
+               self.gameon = False
+               return "win"
+        if self.board[3] == self.board[4] == self.board == self.board[5] == "0": #horizontal 1 check
+               self.gameon = False
+               return "win"
+        if self.board[6] == self.board[7] == self.board == self.board[8] == "X": #horizontal 1 check
+               self.gameon = False
+               return "win"
+        if self.board[6] == self.board[7] == self.board == self.board[8] == "0": #horizontal 1 check
+               self.gameon = False
+               return "win"
 
-    def apply_move(self, pos, turn):
-        self.board[pos] = turn
+        if self.count == 9:
+            self.gameon = False
+            return "draw"
+        #check if game is over and someone won...add other check validations
+    def check_gameon(self):
+        return self.gameon
+    def apply_move(self, pos):
+        self.board[pos] = self.turn
         self.count += 1
         #input move to board
     def switch(self):
