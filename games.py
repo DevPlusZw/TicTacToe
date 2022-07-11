@@ -1,6 +1,6 @@
 class game:
     def __init__(self):
-        self.board = [" t-0", " ", " ", " ", " ", " ", " g-8", " ", " "] #3 rows and 3 colums for the game
+        self.board = [" ", " ", " ", " ", " ", " ", " ", " ", " "] #3 rows and 3 colums for the game
 # 00, 01, 02 row1
 # 10, 11, 12 row2
 # 20, 21, 22 row3
