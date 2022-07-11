@@ -3,6 +3,8 @@ from flask import Flask, session, request, redirect, url_for, render_template
 app = Flask(__name__)
 app.secret_key = b'_5#Gc2L"F4Q8z\n\Mec]/'
 
+mysession = 'mysession'
+
 error = '' #set to pass errors to UI
 tictac = game()
 pos = 0
@@ -11,6 +13,7 @@ def page_not_found(e):
     return "<center><h4>Page Youre looking for doesnt exist - DevPlusZw <a href='/'>go back</></h4></center>"
 @app.route('/', methods=['GET', 'POST'])
 def gamon():
+    session['game'] = mysession
     error = ''
     player = tictac.get_player()
     data = tictac.start()
