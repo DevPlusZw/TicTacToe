@@ -68,7 +68,7 @@ def gamon():
     return render_template('index.html', board=board, player=player, num=num, error=error)
 
 
-@app.route('/Score')
+@app.route('/score')
 def gameover():
     tictac.gameon = False
     print("game over") 

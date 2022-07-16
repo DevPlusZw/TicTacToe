@@ -1,0 +1,12 @@
+Procfile
+README.md
+__pycache__
+app.py
+app.pyc
+games.py
+games.pyc
+ls.txt
+mysecret.txt
+myvenv
+requirements.txt
+templates
